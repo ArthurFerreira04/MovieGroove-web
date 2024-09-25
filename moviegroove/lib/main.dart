@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            color: darkColor.withOpacity(0.66),
+            color: darkColor.withOpacity(0.20),
           ),
           Center(
             child: Column(
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MoviesCatalog()),
                     );
                   },
-                  child: Text('Sign In'),
+                  child: Text('Sign in'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF32CD32),
                     padding: EdgeInsets.symmetric(

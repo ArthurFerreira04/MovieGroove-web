@@ -13,7 +13,13 @@ class _MoviesCatalogState extends State<MoviesCatalog> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
+      appBar: AppBar(  
+        leading: IconButton(
+    icon: Icon(Icons.arrow_back, color: Colors.white), // Ícone de seta para voltar
+    onPressed: () {
+      Navigator.of(context).pop(); // Ação para voltar à tela anterior
+    },
+  ),
         title: Text('Movies Catalog', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -39,7 +45,7 @@ class _MoviesCatalogState extends State<MoviesCatalog> {
                 height: 240,  // Altura fixa para a fileira de filmes
                 child: _buildMoviesRow('Trending Now', _movieService.fetchPopularMovies()),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               // Título da seção "Top Rated"
               Text(
                 'Top Rated',
