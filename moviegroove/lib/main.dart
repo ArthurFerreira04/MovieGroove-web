@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moviegroove/constants.dart';
+import 'movies_catalog.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,30 +40,33 @@ class HomePage extends StatelessWidget {
           ),
           Center(
             child: Column(
-              mainAxisSize: MainAxisSize.min, // Isso ajuda a centralizar sem espaço extra
+              mainAxisSize: MainAxisSize.min,
               children: [
-                // Logo no centro da tela
                 Image(
                   image: AssetImage('assets/logoTrab.png'),
-                  height: 500, // Ajuste o tamanho conforme necessário
+                  height: 500,
                   width: 500,
                 ),
-                SizedBox(height: 10), // Espaço reduzido entre a imagem e o botão
-                // Botão abaixo da imagem
+                SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MoviesCatalog()),
+                    );
+                  },
                   child: Text('Sign In'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF32CD32), // Cor de fundo do botão
+                    backgroundColor: Color(0xFF32CD32),
                     padding: EdgeInsets.symmetric(
-                      horizontal: 70, // Aumentando o tamanho lateral do botão
-                      vertical: 15,  // Diminuindo a altura do botão
+                      horizontal: 70,
+                      vertical: 15,
                     ),
                     textStyle: TextStyle(
-                      fontSize: 18, // Tamanho da fonte
-                      color: Colors.black, // Cor da fonte
+                      fontSize: 18,
+                      color: Colors.black,
                     ),
-                    foregroundColor: Colors.black, // Cor da fonte para garantir que seja preta
+                    foregroundColor: Colors.black,
                   ),
                 ),
               ],
